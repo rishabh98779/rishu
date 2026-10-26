@@ -42,7 +42,7 @@ body{
   font-size:8.6pt;
   line-height:1.375;
   color:var(--charcoal);
-  background:#5c6270;
+  background:#fff;
   -webkit-font-smoothing:antialiased;
   text-rendering:geometricPrecision;
 }
@@ -300,7 +300,7 @@ figcaption b{color:var(--navy);font-weight:650}
    The document flows; Chromium paginates it. Page furniture is stamped into the
    margins afterwards, so content and furniture can never collide.
    ========================================================================== */
-body{background:#5c6270;font-size:7.4pt;line-height:1.195;color:var(--charcoal);
+body{background:#fff;font-size:7.4pt;line-height:1.195;color:var(--charcoal);
   font-family:"Inter",sans-serif;-webkit-font-smoothing:antialiased}
 
 /* ---------- cover: full bleed, no page margins ---------- */
