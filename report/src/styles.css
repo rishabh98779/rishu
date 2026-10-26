@@ -1,0 +1,403 @@
+/* =========================================================================
+   THE ARCHITECTURE OF A PERSON — design system
+   A4 portrait editorial monograph. Chromium print target.
+   ========================================================================= */
+
+@font-face{font-family:"Garamond";src:url("../fonts/EBGaramond%5Bwght%5D.ttf") format("truetype");font-weight:400 800;font-style:normal;font-display:block}
+@font-face{font-family:"Garamond";src:url("../fonts/EBGaramond-Italic%5Bwght%5D.ttf") format("truetype");font-weight:400 800;font-style:italic;font-display:block}
+@font-face{font-family:"Inter";src:url("../fonts/Inter%5Bopsz,wght%5D.ttf") format("truetype");font-weight:100 900;font-style:normal;font-display:block}
+
+:root{
+  --navy:#101A33;
+  --navy-2:#1B2A4A;
+  --navy-3:#2C3E63;
+  --ivory:#FBF8F1;
+  --ivory-2:#F4EFE3;
+  --ivory-3:#EDE6D6;
+  --teal:#146E68;
+  --teal-2:#2C8F86;
+  --teal-3:#8FC4BD;
+  --teal-wash:#E4EFEC;
+  --amber:#9A6714;
+  --amber-2:#C08A2A;
+  --amber-3:#E4C287;
+  --amber-wash:#F7EEDC;
+  --charcoal:#23262B;
+  --charcoal-2:#4A5058;
+  --charcoal-3:#6E757E;
+  --rule:#D8D0BE;
+  --rule-2:#E6DFCF;
+
+  --page-w:210mm;
+  --page-h:297mm;
+  --m-top:15mm;
+  --m-side:16.5mm;
+  --m-bottom:13mm;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:"Inter",sans-serif;
+  font-size:8.6pt;
+  line-height:1.375;
+  color:var(--charcoal);
+  background:#5c6270;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:geometricPrecision;
+}
+
+/* ---------------------------------------------------------------- pages */
+.page{
+  position:relative;
+  width:var(--page-w);
+  height:var(--page-h);
+  background:var(--ivory);
+  overflow:hidden;
+  margin:0 auto 6mm;
+  page-break-after:always;
+  break-after:page;
+}
+.page:last-child{page-break-after:auto;break-after:auto}
+
+.frame{
+  position:absolute;
+  top:var(--m-top); left:var(--m-side);
+  right:var(--m-side); bottom:var(--m-bottom);
+}
+/* navy edge tick */
+.page::after{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:3.2mm;
+  background:linear-gradient(180deg,var(--navy) 0%,var(--navy-2) 60%,var(--teal) 100%);
+}
+.page.tint{background:linear-gradient(168deg,var(--ivory) 0%,var(--ivory-2) 100%)}
+.page.dark{background:var(--navy);color:var(--ivory-2)}
+.page.dark::after{background:linear-gradient(180deg,var(--teal) 0%,var(--amber-2) 100%)}
+
+/* running head / foot */
+.rh{
+  position:absolute;top:11.5mm;left:var(--m-side);right:var(--m-side);
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-size:6.6pt;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--charcoal-3);font-weight:600;
+  border-bottom:.4pt solid var(--rule-2);padding-bottom:2.2mm;
+}
+.rh .rh-r{font-weight:500;letter-spacing:.1em;color:var(--charcoal-3)}
+.page.dark .rh{color:var(--teal-3);border-bottom-color:#2E3D5E}
+.rf{
+  position:absolute;bottom:10mm;left:var(--m-side);right:var(--m-side);
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-size:6.8pt;color:var(--charcoal-3);letter-spacing:.06em;
+  border-top:.4pt solid var(--rule-2);padding-top:2mm;
+}
+.page.dark .rf{color:var(--teal-3);border-top-color:#2E3D5E}
+.folio{font-family:"Garamond",serif;font-size:10.5pt;font-weight:600;color:var(--navy);letter-spacing:0}
+.page.dark .folio{color:var(--amber-3)}
+
+/* ------------------------------------------------------------ typography */
+h1,h2,h3,h4,h5{font-family:"Garamond",serif;font-weight:600;color:var(--navy);margin:0}
+p{margin:0 0 1.1mm}
+strong{font-weight:650;color:var(--navy)}
+em{font-style:italic}
+a{color:var(--teal);text-decoration:none;border-bottom:.4pt solid var(--teal-3)}
+sup{font-size:6.6pt;line-height:0;color:var(--teal);font-weight:600;vertical-align:super}
+.mono{font-size:.92em;letter-spacing:-.01em}
+
+.lede{font-family:"Garamond",serif;font-size:9pt;line-height:1.21;color:var(--navy-2);font-style:italic}
+.dropcap::first-letter{
+  font-family:"Garamond",serif;font-size:27pt;line-height:.8;font-weight:600;
+  float:left;margin:1mm 2mm 0 0;color:var(--teal);
+}
+.small{font-size:8.1pt;line-height:1.42}
+.xsmall{font-size:7.2pt;line-height:1.4;color:var(--charcoal-2)}
+.center{text-align:center}
+.nobreak{break-inside:avoid}
+
+/* ------------------------------------------------------------- chapter */
+.ch-open{position:relative;padding-top:2mm}
+.ch-num{
+  font-family:"Inter",sans-serif;font-size:7.4pt;font-weight:700;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--teal);display:block;margin-bottom:2.4mm;
+}
+.ch-title{font-size:23pt;line-height:1.06;letter-spacing:-.012em;margin:0 0 2.4mm;max-width:150mm}
+.ch-sub{font-family:"Garamond",serif;font-style:italic;font-size:9.2pt;color:var(--charcoal-2);max-width:142mm;margin-bottom:3.2mm}
+.ch-rule{height:2.2pt;width:22mm;background:var(--amber-2);margin:0 0 3mm}
+.page.dark .ch-title{color:var(--ivory)}
+.page.dark .ch-sub{color:var(--teal-3)}
+.page.dark .ch-num{color:var(--amber-3)}
+
+h2.sec{
+  font-size:9.9pt;line-height:1.12;margin:2.1mm 0 .9mm;letter-spacing:-.006em;
+  padding-bottom:.6mm;border-bottom:.5pt solid var(--rule);
+}
+h2.sec:first-child{margin-top:0}
+h2.sec .sn{font-family:"Inter",sans-serif;font-size:8pt;font-weight:700;color:var(--amber);letter-spacing:.1em;margin-right:2.4mm}
+h3.sub{font-size:8.5pt;margin:1.7mm 0 .7mm;color:var(--navy-2);line-height:1.25}
+h3.sub::before{content:"—";color:var(--amber-2);margin-right:1.8mm;font-weight:400}
+h4.min{font-family:"Inter",sans-serif;font-size:8pt;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--teal);margin:2.8mm 0 1.1mm}
+
+/* ------------------------------------------------------------ components */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:2.8mm}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.4mm}
+.grid2a{display:grid;grid-template-columns:1.25fr 1fr;gap:6mm}
+.grid2b{display:grid;grid-template-columns:1fr 1.25fr;gap:6mm}
+
+.card{background:#fff;border:.5pt solid var(--rule-2);border-top:1.6pt solid var(--navy);padding:2mm 2.3mm;break-inside:avoid}
+.card.teal{border-top-color:var(--teal)}
+.card.amber{border-top-color:var(--amber-2)}
+.card h4{font-family:"Inter",sans-serif;font-size:8.1pt;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--navy);margin:0 0 1.8mm}
+.card.teal h4{color:var(--teal)}
+.card.amber h4{color:var(--amber)}
+.card p:last-child{margin-bottom:0}
+.card .body{font-size:7.1pt;line-height:1.25}
+
+.callout{
+  background:var(--teal-wash);border-left:2.6pt solid var(--teal);
+  padding:2.1mm 2.9mm;margin:2mm 0;break-inside:avoid;font-size:8.1pt;line-height:1.36;
+}
+.callout .lab{font-family:"Inter",sans-serif;font-size:7.2pt;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:1.2mm}
+.callout.caution{background:var(--amber-wash);border-left-color:var(--amber-2)}
+.callout.caution .lab{color:var(--amber)}
+.callout.plain{background:#fff;border:.5pt solid var(--rule-2);border-left:2.6pt solid var(--navy-3)}
+.callout.plain .lab{color:var(--navy-3)}
+.callout p:last-child{margin-bottom:0}
+
+.pull{
+  font-family:"Garamond",serif;font-size:11.8pt;line-height:1.24;color:var(--navy);
+  font-style:italic;padding:0 0 0 3.8mm;border-left:2pt solid var(--amber-2);
+  margin:2.6mm 0;break-inside:avoid;
+}
+
+table{width:100%;border-collapse:collapse;font-size:6.05pt;line-height:1.16;break-inside:auto}
+caption{caption-side:top;text-align:left;font-family:"Inter",sans-serif;font-size:7.2pt;font-weight:700;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--teal);padding-bottom:1.8mm}
+th{
+  text-align:left;font-family:"Inter",sans-serif;font-size:6.6pt;font-weight:700;
+  letter-spacing:.07em;text-transform:uppercase;color:var(--ivory);background:var(--navy);
+  padding:1.1mm 1.5mm;vertical-align:bottom;
+}
+td{padding:.6mm .9mm;border-bottom:.4pt solid var(--rule-2);vertical-align:top;color:var(--charcoal)}
+tbody tr:nth-child(even) td{background:var(--ivory-2)}
+td.k{font-weight:650;color:var(--navy)}
+.tbl-note{font-size:7pt;color:var(--charcoal-3);line-height:1.4;margin-top:1.6mm}
+
+ul.tick,ul.plain{list-style:none;margin:1.6mm 0 2.6mm;padding:0}
+ul.tick li{position:relative;padding-left:3.4mm;margin-bottom:.55mm;font-size:7.65pt;line-height:1.25}
+ul.tick li::before{content:"\25B8";position:absolute;left:0;top:-.2mm;color:var(--teal);font-size:8pt}
+ul.plain li{position:relative;padding-left:3.1mm;margin-bottom:.5mm;font-size:7.6pt;line-height:1.25}
+ul.plain li::before{content:"\00B7";position:absolute;left:.8mm;color:var(--amber-2);font-weight:700}
+
+.chain{display:flex;flex-wrap:wrap;gap:1.6mm;margin:2.6mm 0;align-items:center}
+.chain .st{background:#fff;border:.5pt solid var(--rule);padding:1.5mm 2.6mm;font-size:8.1pt;font-weight:600;color:var(--navy)}
+.chain .ar{color:var(--amber-2);font-size:9pt;font-weight:700}
+
+.conf{display:inline-block;font-family:"Inter",sans-serif;font-size:6.8pt;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;padding:.7mm 2mm;border-radius:1mm}
+.conf.hi{background:var(--teal-wash);color:var(--teal);border:.4pt solid var(--teal-3)}
+.conf.md{background:var(--amber-wash);color:var(--amber);border:.4pt solid var(--amber-3)}
+.conf.lo{background:#EDE9E1;color:var(--charcoal-3);border:.4pt solid var(--rule)}
+
+/* figure */
+figure{margin:1.2mm 0;break-inside:avoid;text-align:center}
+figure svg{display:block;margin:0 auto;max-width:100%}
+figcaption{
+  font-size:5.8pt;line-height:1.17;color:var(--charcoal-2);text-align:left;
+  margin-top:2.2mm;padding-top:1.6mm;border-top:.4pt solid var(--rule-2);
+}
+figcaption b{color:var(--navy);font-weight:650}
+
+/* TOC */
+.toc-list{margin-top:4mm}
+.toc-row{display:flex;align-items:baseline;gap:3mm;padding:2.05mm 0;border-bottom:.4pt dotted var(--rule)}
+.toc-row .n{font-family:"Inter",sans-serif;font-size:7.4pt;font-weight:700;color:var(--amber);width:8mm;flex:none;letter-spacing:.06em}
+.toc-row .t{font-family:"Garamond",serif;font-size:11.4pt;color:var(--navy);flex:none}
+.toc-row .d{flex:1;border-bottom:.4pt dotted var(--rule);height:0;transform:translateY(-1mm)}
+.toc-row .p{font-family:"Inter",sans-serif;font-size:8.2pt;font-weight:600;color:var(--charcoal-3);flex:none}
+.toc-row .note{font-size:7.6pt;color:var(--charcoal-3);display:block;font-family:"Inter",sans-serif;margin-top:.3mm}
+.toc-row.sub{padding:1.5mm 0 1.5mm 8mm;border-bottom:none}
+.toc-row.sub .t{font-family:"Inter",sans-serif;font-size:8.3pt;color:var(--charcoal-2)}
+
+/* cover */
+.cover{background:var(--navy);color:var(--ivory)}
+.cover::after{display:none}
+.cover-inner{position:absolute;top:0;left:0;right:0;bottom:0;padding:22mm 20mm 18mm 24mm;display:flex;flex-direction:column}
+.cover h1{font-family:"Garamond",serif;font-size:44pt;line-height:1.02;letter-spacing:-.02em;color:var(--ivory);margin:0}
+.cover .sub{font-family:"Garamond",serif;font-style:italic;font-size:15.4pt;line-height:1.32;color:var(--teal-3);margin-top:6mm;max-width:132mm}
+.cover .prep{font-family:"Inter",sans-serif;font-size:8.6pt;letter-spacing:.2em;text-transform:uppercase;color:var(--amber-3);margin-top:auto;font-weight:600}
+.cover .meta{font-family:"Inter",sans-serif;font-size:7.4pt;color:#8FA0BE;margin-top:2.6mm;line-height:1.5;letter-spacing:.03em}
+
+/* misc utilities */
+.kicker{font-family:"Inter",sans-serif;font-size:7.2pt;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--amber)}
+.mt0{margin-top:0}.mb0{margin-bottom:0}
+.mt2{margin-top:2mm}.mt3{margin-top:3mm}.mt4{margin-top:4mm}.mt6{margin-top:6mm}
+.tiny{font-size:6.9pt;line-height:1.4;color:var(--charcoal-3)}
+.hr{border:0;border-top:.4pt solid var(--rule-2);margin:3.4mm 0}
+.hr-navy{border:0;border-top:1.6pt solid var(--navy);margin:4mm 0}
+.flexrow{display:flex;gap:4mm;align-items:flex-start}
+.refs{font-size:7.1pt;line-height:1.36}
+.refs .r{margin-bottom:1.2mm;padding-left:5.4mm;text-indent:-5.4mm;color:var(--charcoal-2)}
+.refs .r b{color:var(--navy)}
+.gloss{font-size:8.2pt;line-height:1.5}
+.gloss dt{font-weight:650;color:var(--navy);margin-top:2.2mm}
+.gloss dd{margin:.4mm 0 0 0;color:var(--charcoal-2)}
+
+@media print{
+  body{background:#fff}
+  .page{margin:0}
+}
+
+/* hidden page markers used to locate chapter openers in the rendered PDF */
+.pagemark{position:absolute;left:0;top:0;font-size:1pt;color:#FBF8F1;
+  letter-spacing:normal;line-height:1;z-index:0}
+
+/* two-column flow for list-dense chapters and the bibliography */
+.cols2{column-count:4;column-gap:3.4mm;column-fill:auto}
+.cols2.refs-wrap{column-count:3}
+.cols2 > *{break-inside:avoid-column}
+.cols2 .refs{font-size:6.05pt;line-height:1.2}
+.cols2 .refs .r{margin-bottom:.55mm;padding-left:3.6mm;text-indent:-3.6mm}
+.cols2 h3.sub{font-size:7.4pt;margin:1.5mm 0 .7mm;break-after:avoid;letter-spacing:.02em}
+.cols2 .card{padding:2.4mm 2.8mm}
+.cols2 .card .body{font-size:7.7pt;line-height:1.38}
+.cols2 table{font-size:6.9pt;line-height:1.32}
+.cols2 td{padding:1.1mm 1.5mm}
+.cols2 .conf{font-size:6.1pt;padding:.5mm 1.4mm}
+.cols2 p{margin-bottom:1.5mm;font-size:8.5pt;line-height:1.4}
+.cols2 ul.tick li,.cols2 ul.plain li{font-size:8.2pt;line-height:1.36;margin-bottom:.8mm}
+
+/* ------------------------------------------------- two-column editorial flow
+   Applied to chapter bodies: standard for research monographs, and it roughly
+   doubles the words that fit a page without shrinking type below reading size.
+   Wide elements (tables, figures, callouts) span both columns. */
+.two-col{column-count:2;column-gap:6.4mm;column-fill:auto}
+.two-col > p,
+.two-col > ul.tick,
+.two-col > ul.plain,
+.two-col > h2.sec,
+.two-col > h3.sub,
+.two-col > h4.min{break-inside:avoid}
+.two-col > figure,
+.two-col > table,
+.two-col > .callout,
+.two-col > .pull,
+.two-col > .grid2,
+.two-col > .grid3,
+.two-col > .chain,
+.two-col > .cols2,
+.two-col > div[style]{column-span:all}
+.two-col > h2.sec{break-after:avoid}
+.two-col > h3.sub{break-after:avoid}
+.two-col > figure{break-inside:avoid}
+.two-col > table{break-inside:avoid}
+.two-col > .callout{break-inside:avoid}
+.two-col > .pull{break-inside:avoid}
+.two-col > .grid2,.two-col > .grid3{break-inside:avoid}
+.two-col p{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.two-col ul.tick li,.two-col ul.plain li{text-align:left}
+
+/* ==========================================================================
+   NATURAL-PAGINATION LAYOUT
+   The document flows; Chromium paginates it. Page furniture is stamped into the
+   margins afterwards, so content and furniture can never collide.
+   ========================================================================== */
+body{background:#5c6270;font-size:7.4pt;line-height:1.195;color:var(--charcoal);
+  font-family:"Inter",sans-serif;-webkit-font-smoothing:antialiased}
+
+/* ---------- cover: full bleed, no page margins ---------- */
+.cover-page{background:var(--navy);color:var(--ivory);width:210mm;height:297mm;
+  position:relative;overflow:hidden;page-break-after:always;break-after:page}
+.cover-inner{position:absolute;inset:0;padding:20mm 18mm 16mm 22mm;
+  display:flex;flex-direction:column}
+.cover-rule{display:flex;justify-content:space-between;align-items:baseline;
+  border-bottom:.5pt solid #2E3D5E;padding-bottom:2.6mm;
+  font-family:"Inter",sans-serif;font-size:6.8pt;letter-spacing:.26em;
+  text-transform:uppercase;color:#8FA0BE;font-weight:600}
+.cover-block{margin-top:15mm}
+.cover-kicker{font-family:"Inter",sans-serif;font-size:7.2pt;letter-spacing:.3em;
+  text-transform:uppercase;color:#C08A2A;font-weight:700}
+.cover-page h1{font-family:"Garamond",serif;font-size:42pt;line-height:1.0;
+  letter-spacing:-.02em;color:var(--ivory);margin:6mm 0 0;font-weight:600}
+.cover-sub{font-family:"Garamond",serif;font-style:italic;font-size:14.4pt;
+  line-height:1.3;color:var(--teal-3);margin-top:5.4mm;max-width:130mm}
+.cover-art{margin-top:8mm}
+.cover-art svg{width:100%;height:auto}
+.cover-prep{font-family:"Inter",sans-serif;font-size:8.2pt;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--amber-3);margin-top:auto;font-weight:600}
+.cover-meta{font-family:"Inter",sans-serif;font-size:6.8pt;color:#8FA0BE;
+  margin-top:2.2mm;line-height:1.5;letter-spacing:.03em}
+
+/* ---------- flowing sections ---------- */
+.front{page-break-after:always;break-after:page}
+.chapter{break-before:auto;margin-top:2.4mm}
+.chapter + .chapter{border-top:.5pt solid var(--rule);padding-top:3.4mm}
+.front{break-after:auto}
+.front + .front,.front + .chapter{border-top:none}
+
+/* chapter openers occupy the top of a fresh page */
+.ch-open{padding-top:0;margin-bottom:1.5mm;break-after:avoid;break-inside:avoid}
+.ch-title{font-size:16pt;line-height:1.04;margin:0 0 1.6mm;max-width:150mm;
+  font-family:"Garamond",serif;font-weight:600;color:var(--navy)}
+.ch-rule{height:2.1pt;width:20mm;background:var(--amber-2);margin:0 0 2.6mm}
+.ch-sub{font-family:"Garamond",serif;font-style:italic;font-size:9.2pt;
+  color:var(--charcoal-2);max-width:150mm;margin-bottom:0}
+.ch-num{font-family:"Inter",sans-serif;font-size:6.5pt;font-weight:700;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--teal);
+  display:block;margin-bottom:1.4mm}
+
+/* two-column body */
+.two-col{column-count:2;column-gap:6.2mm;column-fill:auto}
+.two-col > p,.two-col > ul.tick,.two-col > ul.plain{break-inside:avoid}
+.two-col > h2.sec,.two-col > h3.sub,.two-col > h4.min{break-after:avoid}
+.two-col > figure,.two-col > table,.two-col > .cols2,
+.two-col > .grid2,.two-col > .grid3{column-span:all}
+.two-col > .grid2,.two-col > .grid3{break-inside:avoid}
+/* callouts and pull-quotes stay inside the column: spanning them forces a column
+   flush at every occurrence, which wastes more space than it saves */
+.two-col > .callout,.two-col > .pull{column-span:none}
+.two-col > .callout{padding:1.4mm 1.9mm;font-size:7.05pt;line-height:1.24;margin:1.1mm 0}
+.two-col > .pull{font-size:9.7pt;line-height:1.2;margin:1.5mm 0}
+.two-col > .grid2,.two-col > .grid3{break-inside:avoid}
+.two-col > .callout,.two-col > .pull{break-inside:avoid}
+.two-col > .callout{padding:1.7mm 2.2mm;font-size:7.4pt;line-height:1.3;margin:1.4mm 0}
+.two-col > .callout .lab{font-size:6.4pt;letter-spacing:.1em;margin-bottom:.7mm}
+.two-col > .pull{font-size:10.2pt;line-height:1.22;margin:1.8mm 0;padding-left:2.6mm;
+  border-left-width:1.8pt}
+.two-col > .grid2 > .card,.two-col > .grid3 > .card{break-inside:avoid}
+.two-col p{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.two-col ul.tick li,.two-col ul.plain li{text-align:left}
+
+/* front matter and colophon also flow in two columns for density */
+.front .toc-list,.front .grid2,.front table,.front .callout,.front .card{break-inside:avoid}
+
+/* page markers must exist in the text layer but not be visible */
+.pagemark{font-size:1pt;color:#FBF8F1;letter-spacing:normal;line-height:1}
+
+h2.sec.first{margin-top:0}
+.toc-ital{font-style:italic}
+
+/* long tables must be splittable, otherwise a single large table strands a page */
+.two-col > table, table.long{break-inside:auto}
+table thead{display:table-header-group}
+table tr{break-inside:avoid}
+table caption{break-after:avoid}
+
+/* figures scale to the column width so they never dominate a page */
+.fig{max-width:100%;width:100%;height:auto;display:block;margin:0 auto}
+figure{text-align:center}
+figure svg{margin:0 auto}
+
+/* colophon flows after the final chapter rather than claiming a page */
+.colophon{margin-top:3.4mm;border-top:.5pt solid var(--rule);padding-top:3mm}
+
+/* the contents page ends on its own page; chapter openers then flow normally */
+.tocpage{break-after:page}
+
+h2.newpage{break-before:page}
+
+/* headings must not be left alone at the foot of a page */
+h2.sec,h3.sub,h4.min{break-after:avoid}
+
+/* a table caption or header row must not be the last thing on a page */
+.tensions caption{break-after:avoid}
+.tensions thead{break-after:avoid}
+table.tensions{break-before:auto}

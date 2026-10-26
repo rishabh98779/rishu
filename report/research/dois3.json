@@ -1,0 +1,192 @@
+[
+ {
+  "doi": "10.1037/0033-2909.134.4.502",
+  "ok": false,
+  "err": "HTTP 404"
+ },
+ {
+  "doi": "10.1037/0022-3514.67.3.366",
+  "ok": true,
+  "title": "Exploring the \"planning fallacy\": Why people underestimate their task completion times.",
+  "container": "Journal of Personality and Social Psychology",
+  "volume": "67",
+  "issue": "3",
+  "page": "366-381",
+  "year": 1994,
+  "authors": "Buehler R.; Griffin D.; Ross M."
+ },
+ {
+  "doi": "10.1037/0022-3514.70.6.1327",
+  "ok": true,
+  "title": "Implications of rejection sensitivity for intimate relationships.",
+  "container": "Journal of Personality and Social Psychology",
+  "volume": "70",
+  "issue": "6",
+  "page": "1327-1343",
+  "year": 1996,
+  "authors": "Downey G.; Feldman S."
+ },
+ {
+  "doi": "10.1348/014466504323088042",
+  "ok": true,
+  "title": "Awareness in early\u2010stage Alzheimer's disease: A review of methods and evidence",
+  "container": "British Journal of Clinical Psychology",
+  "volume": "43",
+  "issue": "2",
+  "page": "177-196",
+  "year": 2004,
+  "authors": "Clare L."
+ },
+ {
+  "doi": "10.1037/a0015421",
+  "ok": true,
+  "title": "Monetary incentives improve recall of research consent information: It pays to remember.",
+  "container": "Experimental and Clinical Psychopharmacology",
+  "volume": "17",
+  "issue": "2",
+  "page": "99-104",
+  "year": 2009,
+  "authors": "Festinger D.; Marlowe D.; Croft J.; Dugosh K."
+ },
+ {
+  "doi": "10.1037/0022-3514.88.6.895",
+  "ok": true,
+  "title": "Moral Conviction: Another Contributor to Attitude Strength or Something More?",
+  "container": "Journal of Personality and Social Psychology",
+  "volume": "88",
+  "issue": "6",
+  "page": "895-917",
+  "year": 2005,
+  "authors": "Skitka L.; Bauman C.; Sargis E."
+ },
+ {
+  "doi": "10.1016/j.beth.2010.04.007",
+  "ok": true,
+  "title": "The Negative Self-Portrayal Scale: Development, Validation, and Application to Social Anxiety",
+  "container": "Behavior Therapy",
+  "volume": "42",
+  "issue": "2",
+  "page": "183-196",
+  "year": 2011,
+  "authors": "Moscovitch D.; Huyder V."
+ },
+ {
+  "doi": "10.1037/0033-2909.94.1.33",
+  "ok": false,
+  "err": "HTTP 404"
+ },
+ {
+  "doi": "10.1016/j.jocrd.2014.08.001",
+  "ok": true,
+  "title": "Hoarding in children and adolescents with obsessive\u2013compulsive disorder",
+  "container": "Journal of Obsessive-Compulsive and Related Disorders",
+  "volume": "3",
+  "issue": "4",
+  "page": "325-331",
+  "year": 2014,
+  "authors": "Samuels J.; Grados M.; Riddle M.; Bienvenu O."
+ },
+ {
+  "doi": "10.1007/s12671-019-01134-6",
+  "ok": true,
+  "title": "Self-Compassion Interventions and Psychosocial Outcomes: a Meta-Analysis of RCTs",
+  "container": "Mindfulness",
+  "volume": "10",
+  "issue": "8",
+  "page": "1455-1473",
+  "year": 2019,
+  "authors": "Ferrari M.; Hunt C.; Harrysunker A.; Abbott M."
+ },
+ {
+  "doi": "10.1037/0033-2909.126.2.247",
+  "ok": true,
+  "title": "Self-regulation and depletion of limited resources: Does self-control resemble a muscle?",
+  "container": "Psychological Bulletin",
+  "volume": "126",
+  "issue": "2",
+  "page": "247-259",
+  "year": 2000,
+  "authors": "Muraven M.; Baumeister R."
+ },
+ {
+  "doi": "10.1080/10478400701512646",
+  "ok": true,
+  "title": "Boosting Attachment Security to Promote Mental Health, Prosocial Values, and Inter-Group Tolerance",
+  "container": "Psychological Inquiry",
+  "volume": "18",
+  "issue": "3",
+  "page": "139-156",
+  "year": 2007,
+  "authors": "Mikulincer M.; Shaver P."
+ },
+ {
+  "doi": "10.1037/0003-066X.62.4.327",
+  "ok": false,
+  "err": "HTTP 404"
+ },
+ {
+  "doi": "10.1146/annurev-psych-010418-102803",
+  "ok": true,
+  "title": "How to Do a Systematic Review: A Best Practice Guide for Conducting and Reporting Narrative Reviews, Meta-Analyses, and Meta-Syntheses",
+  "container": "Annual Review of Psychology",
+  "volume": "70",
+  "issue": "1",
+  "page": "747-770",
+  "year": 2019,
+  "authors": "Siddaway A.; Wood A.; Hedges L."
+ },
+ {
+  "doi": "10.1037/a0023311",
+  "ok": true,
+  "title": "Positive classroom motivational environments: Convergence between mastery goal structure and classroom social climate.",
+  "container": "Journal of Educational Psychology",
+  "volume": "103",
+  "issue": "2",
+  "page": "367-382",
+  "year": 2011,
+  "authors": "Patrick H.; Kaplan A.; Ryan A."
+ },
+ {
+  "doi": "10.1016/j.jrp.2011.08.006",
+  "ok": true,
+  "title": "Gender, jealousy, and attachment: A (more) thorough examination across measures and samples",
+  "container": "Journal of Research in Personality",
+  "volume": "45",
+  "issue": "6",
+  "page": "697-701",
+  "year": 2011,
+  "authors": "Tagler M.; Gentry R."
+ },
+ {
+  "doi": "10.1177/0146167211404209",
+  "ok": false,
+  "err": "HTTP 404"
+ },
+ {
+  "doi": "10.1037/0022-3514.96.4.883",
+  "ok": false,
+  "err": "HTTP 404"
+ },
+ {
+  "doi": "10.1037/pspi0000018",
+  "ok": true,
+  "title": "Awe, the small self, and prosocial behavior.",
+  "container": "Journal of Personality and Social Psychology",
+  "volume": "108",
+  "issue": "6",
+  "page": "883-899",
+  "year": 2015,
+  "authors": "Piff P.; Dietze P.; Feinberg M.; Stancato D."
+ },
+ {
+  "doi": "10.1111/j.1467-8721.2008.00599.x",
+  "ok": true,
+  "title": "From Genes to Brain to Antisocial Behavior",
+  "container": "Current Directions in Psychological Science",
+  "volume": "17",
+  "issue": "5",
+  "page": "323-328",
+  "year": 2008,
+  "authors": "Raine A."
+ }
+]

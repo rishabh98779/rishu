@@ -1,0 +1,18 @@
+# Build intermediates: QA renders, contact sheets and pass PDFs are regenerable
+build/
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Working file excluded from publication: it contains dated personal academic
+# history (exam ranks, reservation category, fee) that the published report
+# deliberately omits. It is also dead code, superseded by final_b.py.
+src/content_mid.py
+
+# Editor and OS noise
+.DS_Store
+*.swp
+.idea/
+.vscode/
