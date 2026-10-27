@@ -9,7 +9,7 @@ Evidence vocabulary used consistently throughout:
 """
 from figures import (fig_bigfive, fig_confidence, fig_siebc, fig_loops,
                      fig_strengths, fig_values, fig_plan, fig_predkey)
-from content_e import CH13
+from content_e import CH14
 
 
 def _ev(kind, s):
@@ -93,7 +93,8 @@ _CONF = [
 
 # Chapter bodies live in dedicated modules.
 from final_b import CH3, CH4        # noqa: E402,F401
-from content_b import CH5           # noqa: E402,F401
-from content_c import CH6, CH7, CH8  # noqa: E402,F401
-from content_d import CH9, CH10, CH11, CH12  # noqa: E402,F401
-from content_e import CH13          # noqa: E402,F401
+from content_risk import CH5        # noqa: E402,F401
+from content_b import CH6           # noqa: E402,F401
+from content_c import CH7, CH8, CH9  # noqa: E402,F401
+from content_d import CH10, CH11, CH12, CH13  # noqa: E402,F401
+from content_e import CH14          # noqa: E402,F401

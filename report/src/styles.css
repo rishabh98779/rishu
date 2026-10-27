@@ -39,8 +39,8 @@
 html,body{margin:0;padding:0}
 body{
   font-family:"Inter",sans-serif;
-  font-size:8.6pt;
-  line-height:1.375;
+  font-size:8.55pt;
+  line-height:1.305;
   color:var(--charcoal);
   background:#fff;
   -webkit-font-smoothing:antialiased;
@@ -96,7 +96,7 @@ body{
 
 /* ------------------------------------------------------------ typography */
 h1,h2,h3,h4,h5{font-family:"Garamond",serif;font-weight:600;color:var(--navy);margin:0}
-p{margin:0 0 1.1mm}
+p{margin:0 0 .88mm}
 strong{font-weight:650;color:var(--navy)}
 em{font-style:italic}
 a{color:var(--teal);text-decoration:none;border-bottom:.4pt solid var(--teal-3)}
@@ -114,25 +114,25 @@ sup{font-size:6.6pt;line-height:0;color:var(--teal);font-weight:600;vertical-ali
 .nobreak{break-inside:avoid}
 
 /* ------------------------------------------------------------- chapter */
-.ch-open{position:relative;padding-top:2mm}
+.ch-open{position:relative;padding-top:1.2mm}
 .ch-num{
   font-family:"Inter",sans-serif;font-size:7.4pt;font-weight:700;letter-spacing:.28em;
-  text-transform:uppercase;color:var(--teal);display:block;margin-bottom:2.4mm;
+  text-transform:uppercase;color:var(--teal);display:block;margin-bottom:1.7mm;
 }
-.ch-title{font-size:23pt;line-height:1.06;letter-spacing:-.012em;margin:0 0 2.4mm;max-width:150mm}
-.ch-sub{font-family:"Garamond",serif;font-style:italic;font-size:9.2pt;color:var(--charcoal-2);max-width:142mm;margin-bottom:3.2mm}
-.ch-rule{height:2.2pt;width:22mm;background:var(--amber-2);margin:0 0 3mm}
+.ch-title{font-size:21pt;line-height:1.04;letter-spacing:-.012em;margin:0 0 1.7mm;max-width:150mm}
+.ch-sub{font-family:"Garamond",serif;font-style:italic;font-size:8.9pt;color:var(--charcoal-2);max-width:142mm;margin-bottom:2.3mm}
+.ch-rule{height:2pt;width:20mm;background:var(--amber-2);margin:0 0 2.1mm}
 .page.dark .ch-title{color:var(--ivory)}
 .page.dark .ch-sub{color:var(--teal-3)}
 .page.dark .ch-num{color:var(--amber-3)}
 
 h2.sec{
-  font-size:9.9pt;line-height:1.12;margin:2.1mm 0 .9mm;letter-spacing:-.006em;
+  font-size:9.7pt;line-height:1.11;margin:1.75mm 0 .75mm;letter-spacing:-.006em;
   padding-bottom:.6mm;border-bottom:.5pt solid var(--rule);
 }
 h2.sec:first-child{margin-top:0}
 h2.sec .sn{font-family:"Inter",sans-serif;font-size:8pt;font-weight:700;color:var(--amber);letter-spacing:.1em;margin-right:2.4mm}
-h3.sub{font-size:8.5pt;margin:1.7mm 0 .7mm;color:var(--navy-2);line-height:1.25}
+h3.sub{font-size:8.4pt;margin:1.4mm 0 .6mm;color:var(--navy-2);line-height:1.25}
 h3.sub::before{content:"—";color:var(--amber-2);margin-right:1.8mm;font-weight:400}
 h4.min{font-family:"Inter",sans-serif;font-size:8pt;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--teal);margin:2.8mm 0 1.1mm}
 
@@ -153,7 +153,7 @@ h4.min{font-family:"Inter",sans-serif;font-size:8pt;font-weight:700;letter-spaci
 
 .callout{
   background:var(--teal-wash);border-left:2.6pt solid var(--teal);
-  padding:2.1mm 2.9mm;margin:2mm 0;break-inside:avoid;font-size:8.1pt;line-height:1.36;
+  padding:1.85mm 2.6mm;margin:1.7mm 0;break-inside:avoid;font-size:8.05pt;line-height:1.32;
 }
 .callout .lab{font-family:"Inter",sans-serif;font-size:7.2pt;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:1.2mm}
 .callout.caution{background:var(--amber-wash);border-left-color:var(--amber-2)}
@@ -165,7 +165,7 @@ h4.min{font-family:"Inter",sans-serif;font-size:8pt;font-weight:700;letter-spaci
 .pull{
   font-family:"Garamond",serif;font-size:11.8pt;line-height:1.24;color:var(--navy);
   font-style:italic;padding:0 0 0 3.8mm;border-left:2pt solid var(--amber-2);
-  margin:2.6mm 0;break-inside:avoid;
+  margin:2.1mm 0;break-inside:avoid;
 }
 
 table{width:100%;border-collapse:collapse;font-size:6.05pt;line-height:1.16;break-inside:auto}
@@ -179,9 +179,9 @@ th{
 td{padding:.6mm .9mm;border-bottom:.4pt solid var(--rule-2);vertical-align:top;color:var(--charcoal)}
 tbody tr:nth-child(even) td{background:var(--ivory-2)}
 td.k{font-weight:650;color:var(--navy)}
-.tbl-note{font-size:7pt;color:var(--charcoal-3);line-height:1.4;margin-top:1.6mm}
+.tbl-note{font-size:7pt;color:var(--charcoal-3);line-height:1.38;margin-top:1.3mm}
 
-ul.tick,ul.plain{list-style:none;margin:1.6mm 0 2.6mm;padding:0}
+ul.tick,ul.plain{list-style:none;margin:1.3mm 0 2.1mm;padding:0}
 ul.tick li{position:relative;padding-left:3.4mm;margin-bottom:.55mm;font-size:7.65pt;line-height:1.25}
 ul.tick li::before{content:"\25B8";position:absolute;left:0;top:-.2mm;color:var(--teal);font-size:8pt}
 ul.plain li{position:relative;padding-left:3.1mm;margin-bottom:.5mm;font-size:7.6pt;line-height:1.25}
@@ -198,11 +198,11 @@ ul.plain li::before{content:"\00B7";position:absolute;left:.8mm;color:var(--ambe
 .conf.lo{background:#EDE9E1;color:var(--charcoal-3);border:.4pt solid var(--rule)}
 
 /* figure */
-figure{margin:1.2mm 0;break-inside:avoid;text-align:center}
-figure svg{display:block;margin:0 auto;max-width:100%}
+figure{margin:.95mm 0;break-inside:avoid;text-align:center}
+figure svg{display:block;margin:0 auto;max-width:92%}
 figcaption{
   font-size:5.8pt;line-height:1.17;color:var(--charcoal-2);text-align:left;
-  margin-top:2.2mm;padding-top:1.6mm;border-top:.4pt solid var(--rule-2);
+  margin-top:1.8mm;padding-top:1.3mm;border-top:.4pt solid var(--rule-2);
 }
 figcaption b{color:var(--navy);font-weight:650}
 
@@ -251,12 +251,12 @@ figcaption b{color:var(--navy);font-weight:650}
   letter-spacing:normal;line-height:1;z-index:0}
 
 /* two-column flow for list-dense chapters and the bibliography */
-.cols2{column-count:4;column-gap:3.4mm;column-fill:auto}
+.cols2{column-count:5;column-gap:2.9mm;column-fill:balance}
 .cols2.refs-wrap{column-count:3}
 .cols2 > *{break-inside:avoid-column}
-.cols2 .refs{font-size:6.05pt;line-height:1.2}
-.cols2 .refs .r{margin-bottom:.55mm;padding-left:3.6mm;text-indent:-3.6mm}
-.cols2 h3.sub{font-size:7.4pt;margin:1.5mm 0 .7mm;break-after:avoid;letter-spacing:.02em}
+.cols2 .refs{font-size:5.55pt;line-height:1.13}
+.cols2 .refs .r{margin-bottom:.45mm;padding-left:3.1mm;text-indent:-3.1mm}
+.cols2 h3.sub{font-size:7.0pt;margin:1.2mm 0 .55mm;break-after:avoid;letter-spacing:.02em}
 .cols2 .card{padding:2.4mm 2.8mm}
 .cols2 .card .body{font-size:7.7pt;line-height:1.38}
 .cols2 table{font-size:6.9pt;line-height:1.32}
@@ -270,7 +270,6 @@ figcaption b{color:var(--navy);font-weight:650}
    doubles the words that fit a page without shrinking type below reading size.
    Wide elements (tables, figures, callouts) span both columns. */
 .two-col{column-count:2;column-gap:6.4mm;column-fill:auto}
-.two-col > p,
 .two-col > ul.tick,
 .two-col > ul.plain,
 .two-col > h2.sec,
@@ -328,13 +327,13 @@ body{background:#fff;font-size:7.4pt;line-height:1.195;color:var(--charcoal);
 
 /* ---------- flowing sections ---------- */
 .front{page-break-after:always;break-after:page}
-.chapter{break-before:auto;margin-top:2.4mm}
-.chapter + .chapter{border-top:.5pt solid var(--rule);padding-top:3.4mm}
+.chapter{break-before:auto;margin-top:1.7mm}
+.chapter + .chapter{border-top:.5pt solid var(--rule);padding-top:2.4mm}
 .front{break-after:auto}
 .front + .front,.front + .chapter{border-top:none}
 
 /* chapter openers occupy the top of a fresh page */
-.ch-open{padding-top:0;margin-bottom:1.5mm;break-after:avoid;break-inside:avoid}
+.ch-open{padding-top:0;margin-bottom:1.1mm;break-after:avoid;break-inside:avoid}
 .ch-title{font-size:16pt;line-height:1.04;margin:0 0 1.6mm;max-width:150mm;
   font-family:"Garamond",serif;font-weight:600;color:var(--navy)}
 .ch-rule{height:2.1pt;width:20mm;background:var(--amber-2);margin:0 0 2.6mm}
@@ -346,7 +345,8 @@ body{background:#fff;font-size:7.4pt;line-height:1.195;color:var(--charcoal);
 
 /* two-column body */
 .two-col{column-count:2;column-gap:6.2mm;column-fill:auto}
-.two-col > p,.two-col > ul.tick,.two-col > ul.plain{break-inside:avoid}
+.two-col > p{break-inside:auto;orphans:2;widows:2}
+.two-col > ul.tick,.two-col > ul.plain{break-inside:avoid}
 .two-col > h2.sec,.two-col > h3.sub,.two-col > h4.min{break-after:avoid}
 .two-col > figure,.two-col > table,.two-col > .cols2,
 .two-col > .grid2,.two-col > .grid3{column-span:all}
@@ -367,7 +367,9 @@ body{background:#fff;font-size:7.4pt;line-height:1.195;color:var(--charcoal);
 .two-col ul.tick li,.two-col ul.plain li{text-align:left}
 
 /* front matter and colophon also flow in two columns for density */
-.front .toc-list,.front .grid2,.front table,.front .callout,.front .card{break-inside:avoid}
+.front .grid2,.front table,.front .callout,.front .card{break-inside:avoid}
+.front .toc-list{break-inside:auto}
+.toc-row{break-inside:avoid}
 
 /* page markers must exist in the text layer but not be visible */
 .pagemark{font-size:1pt;color:#FBF8F1;letter-spacing:normal;line-height:1}
@@ -388,6 +390,9 @@ figure svg{margin:0 auto}
 
 /* colophon flows after the final chapter rather than claiming a page */
 .colophon{margin-top:3.4mm;border-top:.5pt solid var(--rule);padding-top:3mm}
+/* full-width flow: used where a nested multicol would force a page break */
+.wide{column-count:1}
+.wide .cols2{margin-top:1.4mm}
 
 /* the contents page ends on its own page; chapter openers then flow normally */
 .tocpage{break-after:page}

@@ -10,8 +10,8 @@ def _ev(kind, s):
 
 # ============================================================ CHAPTER 4
 # ============================================================ CHAPTER 5
-CH5 = {
-"id": "ch5", "num": "5", "kicker": "Achievement",
+CH6 = {
+"id": "ch6", "num": "6", "kicker": "Achievement",
 "title": "Ambition, Standards and Conscientiousness",
 "sub": "Separating ambition from planning, planning from effort, and effort from outcome",
 "pages": [
@@ -36,7 +36,7 @@ sustains, and what results.</p>
 is strong at the first two layers and thin at the fourth, which is a common and specific profile
 rather than a general weakness.</p>
 
-<h2 class="sec"><span class="sn">5.1</span>What the achievements actually show</h2>
+<h2 class="sec"><span class="sn">6.1</span>What the achievements actually show</h2>
 
 
 <p>The academic trajectory is more informative than any single result. Class 10 at 88 per cent,
@@ -51,7 +51,7 @@ lasting damage.</p>
 
 </div>
 
-<h2 class="sec"><span class="sn">5.2</span>Learning preferences as strategy, not fussiness</h2>
+<h2 class="sec"><span class="sn">6.2</span>Learning preferences as strategy, not fussiness</h2>
 
 <p>His requirements for study material are specific enough that they could be read as difficulty
 being satisfied. Read against the evidence, they look more like an accurate model of how he learns.</p>

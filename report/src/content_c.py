@@ -10,8 +10,8 @@ def _ev(kind, s):
 
 
 # ============================================================ CHAPTER 6
-CH6 = {
-"id": "ch6", "num": "6", "kicker": "Interpersonal",
+CH7 = {
+"id": "ch7", "num": "7", "kicker": "Interpersonal",
 "title": "Diplomacy, Empathy and Relationships",
 "sub": "Where his stated values hold, where they have slipped, and what cannot be seen from here",
 "pages": [
@@ -29,7 +29,7 @@ treated as established fact.</p>
 </div>
 
 
-<h2 class="sec"><span class="sn">6.1</span>The one documented values-and-conduct gap</h2>
+<h2 class="sec"><span class="sn">7.1</span>The one documented values-and-conduct gap</h2>
 
 <p>This is the most concrete evidence in the whole assessment about how his values behave under
 social pressure, and it deserves to be stated plainly and without embellishment.</p>
@@ -66,7 +66,7 @@ lecture, and then dropped.</p>
 </div>
 """,
 f"""
-<h2 class="sec"><span class="sn">6.2</span>Objectification, pedestalisation and the wish for ordinariness</h2>
+<h2 class="sec"><span class="sn">7.2</span>Objectification, pedestalisation and the wish for ordinariness</h2>
 
 <p>He has described wanting women to feel safe and comfortable around him, and not wanting to
 objectify them. He has also described seeing women as especially vulnerable or morally better than
@@ -128,7 +128,7 @@ constant vigilance, which is itself exhausting and tends to produce the intrusiv
 meant to prevent.</p>
 """,
 f"""
-<h2 class="sec"><span class="sn">6.3</span>Social stiffness: what it is and what it is not</h2>
+<h2 class="sec"><span class="sn">7.3</span>Social stiffness: what it is and what it is not</h2>
 
 <p>He reports breaking eye contact quickly when speaking face-to-face with women, shoulders locking
 or the body becoming stiff, and being unusually careful or formal. He says the same can occur around
@@ -194,8 +194,8 @@ dict(name="Productivity", strength="real, verifiable competence",
 shadow="output as a precondition for self-acceptance", evidence=3),
 ]
 
-CH7 = {
-"id": "ch7", "num": "7", "kicker": "Capacities",
+CH8 = {
+"id": "ch8", "num": "8", "kicker": "Capacities",
 "title": "Strengths and Their Shadow Sides",
 "sub": "Every entry below is one disposition with two outcomes, not a virtue beside a fault",
 "pages": [
@@ -206,14 +206,14 @@ he is in but what moves him between them.</p>
 
 <figure>
 {fig_strengths(_STR, 520)}
-<figcaption><b>Figure 5. Strengths and their shadow sides.</b> Evidence squares indicate how much
+<figcaption><b>Figure 6. Strengths and their shadow sides.</b> Evidence squares indicate how much
 support exists for the <em>left-hand</em> column, which is the better-evidenced side in every case.
 Several right-hand entries are inferences from the pattern of his requests and self-descriptions
 rather than from observed failures — they mark where to look, not where a defect is proven to
 be.</figcaption>
 </figure>
 
-<h2 class="sec"><span class="sn">7.1</span>The strongest assets</h2>
+<h2 class="sec"><span class="sn">8.1</span>The strongest assets</h2>
 
 <div class="grid2">
 <div class="card teal">
@@ -246,7 +246,7 @@ overreach, not indifference.</p>
 </div>
 
 <div class="keep">
-<h2 class="sec"><span class="sn">7.2</span>The sharpest liabilities</h2>
+<h2 class="sec"><span class="sn">8.2</span>The sharpest liabilities</h2>
 
 <div class="grid2">
 <div class="card amber">
@@ -319,8 +319,8 @@ dict(value="Self-compassion", note="no evidence of it anywhere in the record",
 direction="untested", evidence=0),
 ]
 
-CH8 = {
-    "id": "ch8", "num": "8", "kicker": "Tensions",
+CH9 = {
+    "id": "ch9", "num": "9", "kicker": "Tensions",
     "title": "Contradictions and Blind Spots",
     "sub": "Fourteen tensions, the evidence on each side, and what would settle them",
     "pages": [
@@ -331,7 +331,7 @@ readings and names a test that would settle it.</p>
 
 <figure>
 {fig_values(_VAL, 520)}
-<figcaption><b>Figure 6. Values against behavioural evidence.</b> Position on the horizontal axis
+<figcaption><b>Figure 7. Values against behavioural evidence.</b> Position on the horizontal axis
 records how much <em>behavioural</em> evidence supports the stated value — not how sincere the value
 is. A point left of centre means the record shows the value being overridden at least once, not that
 it is false. The dashed row marks a value that is nowhere tested in the record. This is a reflection

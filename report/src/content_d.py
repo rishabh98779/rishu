@@ -146,8 +146,8 @@ def _pred_table(preds):
 
 
 # ============================================================ CHAPTER 9
-CH9 = {
-"id": "ch9", "num": "9", "kicker": "Projections",
+CH10 = {
+"id": "ch10", "num": "10", "kicker": "Projections",
 "title": "Conditional Behavioural Predictions",
 "sub": "Fourteen situations, each with its reasoning, its alternative and its confidence",
 "pages": [
@@ -164,8 +164,8 @@ what follows practically.</p>
 
 
 # ============================================================ CHAPTER 10
-CH10 = {
-"id": "ch10", "num": "10", "kicker": "Development",
+CH11 = {
+"id": "ch11", "num": "11", "kicker": "Development",
 "title": "Development Plan",
 "sub": "Three priorities, thirty days, observable indicators, and no requirement for anyone else's cooperation",
 "pages": [
@@ -173,19 +173,19 @@ f"""
 <p class="lede">Three priorities, chosen because the evidence for each is strong, each is within
 his own control, and each is measurable without an app, a purchase or another person's agreement.</p>
 
-<p>They are deliberately few. A plan that addresses every tension in Chapter 8 would be a plan that
+<p>They are deliberately few. A plan that addresses every tension in Chapter 9 would be a plan that
 gets abandoned in a week, and abandonment would add one more item to the self-assessment. The target
 is a reliable minimum that survives a bad week.</p>
 
 <figure>
 {fig_plan(_PLAN, 520)}
-<figcaption><b>Figure 7. The 30-day plan.</b> Each priority states one behaviour, a minimum action,
+<figcaption><b>Figure 8. The 30-day plan.</b> Each priority states one behaviour, a minimum action,
 an indicator, a missed-day rule, a weekly review and a definition of progress. The missed-day rule
 is the load-bearing element: a plan without one converts a single missed day into a reason to stop,
 which is the most common way self-improvement plans fail.</figcaption>
 </figure>
 
-<h2 class="sec"><span class="sn">10.1</span>Why these three</h2>
+<h2 class="sec"><span class="sn">11.1</span>Why these three</h2>
 
 <div class="grid3">
 <div class="card teal">
@@ -242,15 +242,15 @@ _QS = [
 ("How did the Class 11 drop from 88% to 69% happen, and what changed between Class 11 and Class 12?",
 "This is the clearest documented downturn in the record, and its cause would test the attribution he makes to a difficult school period."),
 ("Have the recorded projects been completed, maintained, or abandoned?",
-"Repositories exist; their state is unknown. This decides whether the technical strengths in Chapter 7 are matched by sustained follow-through, which is the weakest layer of the record."),
+"Repositories exist; their state is unknown. This decides whether the technical strengths in Chapter 8 are matched by sustained follow-through, which is the weakest layer of the record."),
 ("How do other people experience him — as warm, reserved, intense, distant?",
 "There is not a single observer account in the source material. Observer ratings add information self-report systematically cannot, and would test the agreeableness and extraversion estimates directly."),
 ("What happened after the teammate disagreement, and what did he actually say to her?",
 "This is the one documented values-and-conduct gap. What he did next is the only available evidence about whether the recognition he reports has produced a behavioural change."),
 ]
 
-CH11 = {
-"id": "ch11", "num": "11", "kicker": "Uncertainty",
+CH12 = {
+"id": "ch12", "num": "12", "kicker": "Uncertainty",
 "title": "What Remains Unknown",
 "sub": "Ten questions that would materially change this assessment, and why each one matters",
 "pages": [
@@ -280,8 +280,8 @@ depend on any of the ten questions above.</p>
 
 
 # ============================================================ CHAPTER 12
-CH12 = {
-"id": "ch12", "num": "12", "kicker": "Synthesis",
+CH13 = {
+"id": "ch13", "num": "13", "kicker": "Synthesis",
 "title": "Final Synthesis",
 "sub": "What the evidence supports, what deserves attention, and what should not be concluded",
 "pages": [
@@ -291,7 +291,7 @@ principal difficulty is not a deficiency of ability or values but a method: he c
 imperfect, bounded action into an unanswerable question about his own worth, and then works on the
 question.</p>
 
-<h2 class="sec first"><span class="sn">12.1</span>What kind of person the evidence suggests</h2>
+<h2 class="sec first"><span class="sn">13.1</span>What kind of person the evidence suggests</h2>
 
 <p>The most defensible single sentence is this. Rishabh appears to be a high-openness,
 high-standards, emotionally reactive young man in the middle of forming an identity, who has
@@ -305,7 +305,7 @@ long conversation in which he was asked directly about these things. It does not
 severity, persistence or current status, and it cannot establish his safety now. Both kinds of
 material belong in the same report, and they should not be given the same weight.</p>
 
-<h2 class="sec"><span class="sn">12.2</span>Strengths worth building on</h2>
+<h2 class="sec"><span class="sn">13.2</span>Strengths worth building on</h2>
 
 <div class="grid2">
 <div class="card teal"><h4>Cross-domain learning</h4><p class="body">He moves between algorithm
@@ -326,7 +326,7 @@ him seriously. The failure mode of this trait is overreach, and overreach is eas
 indifference.</p></div>
 </div>
 
-<h2 class="sec"><span class="sn">12.3</span>Liabilities that deserve attention</h2>
+<h2 class="sec"><span class="sn">13.3</span>Liabilities that deserve attention</h2>
 
 <p>Four, in order of how much they affect the outcomes he says he wants.</p>
 
@@ -346,7 +346,7 @@ refusal loses force.</li>
 </ul>
 """,
 """
-<h2 class="sec"><span class="sn">12.5</span>What should change, and how</h2>
+<h2 class="sec"><span class="sn">13.5</span>What should change, and how</h2>
 
 <p>The developmental changes worth pursuing are behavioural rather than self-descriptive, and there
 are three of them. Ship one thing a week at a quality he considers acceptable rather than ideal. Have

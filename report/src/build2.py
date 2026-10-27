@@ -25,8 +25,8 @@ sys.path.insert(0, HERE)
 import content as K           # noqa: E402
 from figures import cover_art  # noqa: E402
 
-CHAPTERS = [K.CH1, K.CH2, K.CH3, K.CH4, K.CH5, K.CH6, K.CH7,
-            K.CH8, K.CH9, K.CH10, K.CH11, K.CH12, K.CH13]
+CHAPTERS = [K.CH1, K.CH2, K.CH3, K.CH4, K.CH5, K.CH6, K.CH7, K.CH8,
+            K.CH9, K.CH10, K.CH11, K.CH12, K.CH13, K.CH14]
 
 RUNNING = {c["id"]: c["title"] for c in CHAPTERS}
 
@@ -36,20 +36,21 @@ TOC = [
     ("Personality at a Glance", "Big Five, HEXACO and VIA readings with evidence strength", "ch2"),
     ("The Thinking System", "Analysis, decisions, and the search for one root cause", "ch3"),
     ("The Emotional System", "Guilt, shame, self-punishment, composure, empathy", "ch4"),
-    ("Ambition, Standards and Conscientiousness", "Ambition, planning, effort, execution, outcome", "ch5"),
-    ("Diplomacy, Empathy and Relationships", "Values in practice, idealisation, social stiffness", "ch6"),
-    ("Strengths and Their Shadow Sides", "Twelve capacities with their failure modes", "ch7"),
-    ("Contradictions and Blind Spots", "Fourteen tensions, each with a test", "ch8"),
-    ("Conditional Behavioural Predictions", "Fourteen situations with reasoning and alternatives", "ch9"),
-    ("Development Plan", "Three priorities and a thirty-day structure", "ch10"),
-    ("What Remains Unknown", "Ten questions and two structural limits", "ch11"),
-    ("Final Synthesis", "Conclusions, liabilities, and what not to infer", "ch12"),
-    ("Research and Methodology", "Evidence base, source quality, bibliography", "ch13"),
+    ("Safety and Risk Formulation", "Historical signals, protective factors and current unknowns", "ch5"),
+    ("Ambition, Standards and Conscientiousness", "Ambition, planning, effort, execution, outcome", "ch6"),
+    ("Diplomacy, Empathy and Relationships", "Values in practice, idealisation, social stiffness", "ch7"),
+    ("Strengths and Their Shadow Sides", "Twelve capacities with their failure modes", "ch8"),
+    ("Contradictions and Blind Spots", "Fourteen tensions, each with a test", "ch9"),
+    ("Conditional Behavioural Predictions", "Fourteen situations with reasoning and alternatives", "ch10"),
+    ("Development Plan", "Three priorities and a thirty-day structure", "ch11"),
+    ("What Remains Unknown", "Ten questions and two structural limits", "ch12"),
+    ("Final Synthesis", "Conclusions, liabilities, and what not to infer", "ch13"),
+    ("Research and Methodology", "Evidence base, source quality, bibliography", "ch14"),
 ]
 
 # page geometry, millimetres
 PW, PH = 210.0, 297.0
-M_TOP, M_SIDE, M_BOTTOM = 13.4, 14.6, 11.4
+M_TOP, M_SIDE, M_BOTTOM = 12.6, 14.2, 10.8
 SPINE_W = 3.2
 
 
@@ -75,7 +76,7 @@ def cover_html(words="15,300", pages="23"):
     <div class="cover-meta">
       Evidence-informed interpretive report · Approximately {words} words · {pages} pages<br/>
       Based on a subject dossier and an exported Rishabh–AI conversation transcript<br/>
-      No instrument administered · No clinical evaluation or risk assessment performed
+      No instrument administered · Includes a bounded, retrospective Safety and Risk Formulation (Ch. 5)
     </div>
   </div>
 </section>
@@ -115,9 +116,11 @@ conversation, using established psychological frameworks as lenses.</p>
 </div>
 <div class="card amber">
 <h4>What this report is not</h4>
-<p class="body">Not a clinical evaluation. Not a diagnosis. Not a psychometric assessment. Not a
-suicide, self-harm or violence risk assessment. Not a substitute for speaking with a qualified
-professional, and not a basis for anyone else to make decisions about him.</p>
+<p class="body">Not a clinical evaluation. Not a diagnosis. Not a psychometric assessment. It
+contains a retrospective, evidence-bounded Safety and Risk Formulation (Chapter 5), but that chapter
+is <b>not</b> a formal clinical risk assessment and cannot establish present acute risk. This report
+is not a substitute for speaking with a qualified professional, and not a basis for anyone else to
+make decisions about him.</p>
 </div>
 </div>
 
@@ -135,12 +138,15 @@ Nothing in this report upgrades one into another in either direction.</p>
 
 <div class="callout caution">
 <span class="lab">One paragraph the reader should not skip</span>
-<p>If self-hatred, self-punishment or intrusive thoughts are currently frequent, severe or difficult
-to leave alone, or if there is any thought of harm to himself or anyone else, the appropriate step is
-to speak with a qualified mental-health professional — a university counselling service, a
-psychologist or a psychiatrist. Imminent risk requires urgent local help. Nothing in this report
-substitutes for that, and no part of it should be read as establishing that such support is or is not
-needed.</p>
+<p>The source material contains two explicit first-person disclosures that are risk-relevant: a
+self-sacrificial statement tied to an idealised figure, and a separate episode of escalating anger
+with violent imagery. Both are examined in Chapter 5 and neither is softened there. If either kind of
+thought is currently frequent, severe, escalating or difficult to leave alone, or if there is any
+thought of harm to himself or anyone else, the appropriate step is to speak with a qualified
+mental-health professional — a university counselling service, a psychologist or a psychiatrist. If
+there is current intent, a plan, access to means, an identifiable target, or an inability to stay
+safe, that requires immediate local help. Nothing in this report substitutes for that, and no part of
+it should be read as establishing that such support is or is not needed.</p>
 </div>
 
 <p class="tiny">Personal identifiers, account names, institutional numbers, contact details and the
@@ -165,7 +171,7 @@ def toc_html(folios):
                         f'<span class="d"></span><span class="p">{p}</span></div>')
     return f"""
 <span class="pagemark">MARKTOC</span>
-<h2 class="sec first newpage"><span class="sn">ii</span>Contents</h2>
+<h2 class="sec"><span class="sn">ii</span>Contents</h2>
 <div class="toc-list">{"".join(rows)}</div>
 
 <h2 class="sec"><span class="sn">iii</span>Figures and tables</h2>
@@ -177,9 +183,10 @@ def toc_html(folios):
 <b>2</b>&nbsp; HEXACO profile with evidence strength<br/>
 <b>3</b>&nbsp; Evidence-confidence matrix<br/>
 <b>4</b>&nbsp; Situation–interpretation–emotion–behaviour–consequence model<br/>
-<b>5</b>&nbsp; Strengths and their shadow sides<br/>
-<b>6</b>&nbsp; Values against behavioural evidence<br/>
-<b>7</b>&nbsp; The thirty-day plan</p>
+<b>5</b>&nbsp; Risk-relevant domains: historical evidence vs. current unknowns<br/>
+<b>6</b>&nbsp; Strengths and their shadow sides<br/>
+<b>7</b>&nbsp; Values against behavioural evidence<br/>
+<b>8</b>&nbsp; The thirty-day plan</p>
 </div>
 </div>
 <div>
@@ -188,12 +195,13 @@ def toc_html(folios):
 <p>Evidence vocabulary used throughout (front matter)<br/>
 Four readings of the single-cause request (Ch. 3)<br/>
 Separating guilt, shame and self-punishment (Ch. 4)<br/>
-The five layers of ambition (Ch. 5)<br/>
-What the teammate episode does and does not establish (Ch. 6)<br/>
-Fourteen tensions with their evidence and test (Ch. 8)<br/>
-Fourteen conditional projections (Ch. 9)<br/>
-The ten questions and what each would resolve (Ch. 11)<br/>
-Sources used and the weight given to each (Ch. 13)</p>
+Risk domains: evidence, context, unknowns, bounded conclusion (Ch. 5)<br/>
+The five layers of ambition (Ch. 6)<br/>
+What the teammate episode does and does not establish (Ch. 7)<br/>
+Fourteen tensions with their evidence and test (Ch. 9)<br/>
+Fourteen conditional projections (Ch. 10)<br/>
+The ten questions and what each would resolve (Ch. 12)<br/>
+Sources used and the weight given to each (Ch. 14)</p>
 </div>
 </div>
 </div>
@@ -204,15 +212,10 @@ COLOPHON = """
 <span class="pagemark">MARKCOLOPHON</span>
 <h2 class="sec first"><span class="sn">iv</span>About this document</h2>
 
-<div class="grid2">
-<div class="card">
-<h4>Production</h4>
-<p class="body">Set in EB Garamond for display and headings and Inter for body text, on an A4
-portrait grid. Palette: midnight navy, warm ivory, restrained teal for constructive findings, muted
-amber for uncertainty and caution. All figures are original vector artwork generated for this report.
-No stock imagery is used.</p>
-</div>
-</div>
+<p class="small">Set in EB Garamond for display and headings and Inter for body text, on an A4 portrait
+grid. Palette: midnight navy, warm ivory, restrained teal for constructive findings, muted amber for
+uncertainty and caution. All figures are original vector artwork generated for this report; no stock
+imagery is used.</p>
 
 <h2 class="sec"><span class="sn">v</span>Statement of limitations</h2>
 
@@ -226,7 +229,8 @@ introverted or extraverted; how others experience him; whether his reported dist
 occasional or situational; how consistently he performs when unobserved; his current political,
 religious, gender-related or relationship views; whether any recorded academic, health or routine
 detail remains current; whether any project achieved its intended result; whether he has any
-psychological or medical condition; and his current safety status.</p>
+psychological or medical condition; and his current safety status, which Chapter 5 addresses as a
+retrospective formulation and which no historical transcript can settle.</p>
 
 <p>Three further limits apply. First, several emotionally significant disclosures were made in a
 conversation that repeatedly offered confident and totalising explanations of his character, which may
@@ -250,7 +254,21 @@ def chapter_html(ch):
             f'<h1 class="ch-title">{ch["title"]}</h1>'
             f'<div class="ch-rule"></div>'
             f'<div class="ch-sub">{ch["sub"]}</div></div>')
-    body = '<div class="two-col">' + "\n".join(ch["pages"]) + "</div>"
+    # A page may opt out of the two-column flow with a leading <!--WIDE--> marker.
+    # The bibliography uses this: a nested column-span:all block inside a multicol
+    # container is pushed to a fresh page by Chromium rather than filling the
+    # current one, which wastes most of a page.
+    flows, wide = [], []
+    for pg in ch["pages"]:
+        if pg.lstrip().startswith("<!--WIDE-->"):
+            wide.append(pg.replace("<!--WIDE-->", "", 1))
+        else:
+            flows.append(pg)
+    body = ""
+    if flows:
+        body += '<div class="two-col">' + "\n".join(flows) + "</div>"
+    if wide:
+        body += '<div class="wide">' + "\n".join(wide) + "</div>"
     return f'<section class="chapter" data-chapter="{ch["id"]}">{head}{body}</section>'
 
 
