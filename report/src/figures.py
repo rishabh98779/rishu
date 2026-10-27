@@ -102,6 +102,7 @@ def fig_bigfive(rows, width=520):
     out.append(text(GX + GW / 2, 10, "MODERATE", 6.2, CHAR3, anchor="middle", weight="700", ls="1.4"))
     out.append(text(GX + GW, 10, "HIGH", 6.2, CHAR3, anchor="end", weight="700", ls="1.4"))
     out.append(line(GX, 14, GX + GW, 14, RULE, 0.6))
+    out.append(text(width - 84, 10, "EVIDENCE", 6.2, CHAR3, weight="700", ls="1.4"))
     # band edges for 5 levels
     for i in range(6):
         x = GX + GW * i / 5
@@ -138,7 +139,6 @@ def fig_bigfive(rows, width=520):
         # evidence gauge
         ev = r["evidence"]     # 0..4
         ex = width - 84
-        out.append(text(ex - 4, y + 9.8, "evidence", 5.8, CHAR3, anchor="end"))
         for k in range(4):
             filled = k < ev
             out.append(rect(ex + k * 8.4, y + 4, 6.4, 6.8,
@@ -196,9 +196,9 @@ def fig_confidence(items, width=520):
 # --------------------------------------------------------------------------
 def fig_strengths(pairs, width=520):
     """pairs: {name, strength, shadow, evidence}"""
-    rh = 28
-    head = 30
-    h = head + rh * len(pairs) + 22
+    rh = 24.5
+    head = 27
+    h = head + rh * len(pairs) + 20
     cw = (width - 116) / 2
     L = 110
     out = []
@@ -323,7 +323,7 @@ def fig_values(rows, width=520):
     # axis: -2..+2 as tension..consistent
     mid = GX + GW / 2
     out.append(line(mid, 22, mid, head + rh * len(rows) - 4, RULE, 0.7))
-    out.append(text(mid, 30, "mixed / untested", 6.2, CHAR3, anchor="middle"))
+    out.append(text(mid, 26.5, "mixed / untested", 6.2, CHAR3, anchor="middle"))
     for i, r in enumerate(rows):
         y = head + i * rh
         if i % 2 == 0:
@@ -441,8 +441,8 @@ def fig_loops(width=520):
 # --------------------------------------------------------------------------
 def fig_plan(priorities, width=520):
     rh = 92
-    head = 40
-    h = head + rh * len(priorities) + 26
+    head = 36
+    h = head + rh * len(priorities) + 22
     out = []
     cols = ["Minimum action", "Indicator", "Missed-day rule", "Weekly review", "Progress looks like"]
     cw = [width * .185, width * .18, width * .185, width * .20, width * .25]
@@ -456,17 +456,15 @@ def fig_plan(priorities, width=520):
         out.append(text(8, y + 6, p["name"], 9.2, NAVY, weight="650", family=FG))
         # wrapped objective
         _wrap(out, 8, y + 17, width * 0.95, p["behaviour"], 6.8, CHAR2, 3, lh=8.6)
-        out.append(line(8, y + 44, width - 8, y + 44, RULE2, 0.5))
+        out.append(line(8, y + 42, width - 8, y + 42, RULE2, 0.5))
         x = 8
         for j, c in enumerate(cols):
-            out.append(text(x, y + 54, c.upper(), 5.9, CHAR3, weight="700", ls="0.8"))
-            _wrap(out, x, y + 63, cw[j] - 7, p["cells"][j], 6.6, CHAR, 3, lh=8.2)
+            out.append(text(x, y + 52, c.upper(), 5.9, CHAR3, weight="700", ls="0.8"))
+            _wrap(out, x, y + 61, cw[j] - 7, p["cells"][j], 6.6, CHAR, 3, lh=8.0)
             x += cw[j]
     fy = head + rh * len(priorities) + 4
-    out.append(text(0, fy + 8, "A month changes practice, not personality. The target is a reliable minimum that "
-                               "survives a bad week, not an ideal routine that collapses in one.", 6.6, CHAR2))
-    out.append(text(0, fy + 16.5, "Every indicator is observable by Rishabh alone. None requires an app, a "
-                                  "purchase, or another person's cooperation.", 6.6, CHAR3))
+    out.append(text(0, fy + 8, "A month changes practice, not personality: the target is a reliable minimum that "
+                               "survives a bad week. Every indicator is observable by Rishabh alone.", 6.6, CHAR2))
     return svg(width, h, "".join(out))
 
 
@@ -562,4 +560,47 @@ def fig_predkey(width=520):
         out.append(text(x + 17, 28, name, 7.0, col, weight="700"))
         out.append(text(x + 17, 37, desc, 6.3, CHAR3))
         x += 172
+    return svg(width, h, "".join(out))
+
+
+# --------------------------------------------------------------------------
+# 10. Safety and risk: five domains, historical evidence vs current unknowns
+# --------------------------------------------------------------------------
+def fig_risk(domains, width=520):
+    """domains: {name, historical, current, tone}
+
+    Renders a two-column domain map. The left column states what the historical
+    source contains; the right states what remains undetermined. The right
+    column is deliberately drawn as open, hatched ground: the source cannot fill
+    it, and a filled bar there would misrepresent the evidence.
+    """
+    rh = 30
+    head = 26
+    h = head + rh * len(domains) + 30
+    LW = 96
+    CW = (width - LW - 8) / 2
+    tones = {"high": (AMBER2, AMBERW), "mid": (AMBER, AMBERW),
+             "open": (CHAR3, "#EDE9E1")}
+    out = []
+    out.append(text(LW, 11, "WHAT THE HISTORICAL SOURCE CONTAINS", 6.6, AMBER, weight="700", ls="1.2"))
+    out.append(text(LW + CW + 8, 11, "WHAT REMAINS UNDETERMINED", 6.6, CHAR3, weight="700", ls="1.2"))
+    out.append(line(LW, 16, width, 16, NAVY, 0.9))
+    for i, d in enumerate(domains):
+        y = head + i * rh
+        col, wash = tones[d["tone"]]
+        if i % 2 == 0:
+            out.append(rect(0, y - 15, width, rh, fill="#FFFFFF", op=0.5))
+        _wrap(out, 0, y - 6, LW - 6, d["name"], 7.6, NAVY, 2, lh=8.4)
+        out.append(rect(LW, y - 15, CW, 38, fill=wash, rx=1.2))
+        out.append(rect(LW, y - 15, 1.6, 38, fill=col))
+        _wrap(out, LW + 5, y - 8, CW - 9, d["historical"], 6.9, "#6B4A12", 3, lh=7.6)
+        out.append(rect(LW + CW + 8, y - 15, CW, 38, fill="#FFFFFF",
+                        stroke=RULE, sw=0.6, rx=1.2, dash="2 1.6"))
+        _wrap(out, LW + CW + 13, y - 8, CW - 9, d["current"], 6.9, CHAR3, 3, lh=7.6)
+        out.append(line(0, y + 23, width, y + 23, RULE2, 0.5))
+    fy = head + rh * len(domains) + 4
+    out.append(text(0, fy + 9, "The right-hand column is not a low reading. It is an absence of "
+                               "information, and the two are not interchangeable.", 6.6, CHAR3))
+    out.append(text(0, fy + 18, "No tier, score or probability is assigned. A historical transcript "
+                                "cannot establish present risk in either direction.", 6.6, CHAR3))
     return svg(width, h, "".join(out))

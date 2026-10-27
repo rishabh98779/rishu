@@ -306,8 +306,8 @@ change how he handles all of this, and he has thought about it carefully.</p>
 <p class="body">Whether any of this is current, or how current. Whether it is frequent or occasional.
 Whether it causes functional impairment, and if so where. Whether it is situational or pervasive.
 Whether his self-descriptions have been shaped by the questions he was asked and the confident answers
-he received. Whether he has any psychological or medical condition. His safety status now, which this
-document cannot assess and does not assess.</p>
+he received. Whether he has any psychological or medical condition. His safety status now, which this document cannot
+assess; the risk-relevant material in the source is set out separately in Chapter 5.</p>
 </div>
 </div>
 
